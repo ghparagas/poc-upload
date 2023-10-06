@@ -1,17 +1,17 @@
-package com.example.pocupload.service;
+package com.example.pocupload.resource;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
-import org.springframework.stereotype.Service;
+import jakarta.ws.rs.QueryParam;
 
-@Service
+
 @Path("/hello")
-public class HelloService {
+public class HelloResource {
 
     @GET
     @Produces("text/plain")
-    public String hello() {
-        return "Hello from Spring";
+    public String hello(@QueryParam("name") String name) {
+        return "Hello " + name;
     }
 }
